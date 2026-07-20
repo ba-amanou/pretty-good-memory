@@ -1,0 +1,11 @@
+.app-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .app-content {
+        padding-bottom: calc(var(--nav-height-mobile) + 1.5rem);
+    }
+}
