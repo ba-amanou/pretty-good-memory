@@ -1,0 +1,29 @@
+<nav class="app-nav" aria-label="Primary">
+  <span class="app-nav__brand">Pretty Good Memory</span>
+  <ul class="app-nav__list">
+    @for (item of navItems; track item.path) {
+      <li>
+        <a [routerLink]="item.path" routerLinkActive="is-active" class="app-nav__link">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            @switch (item.icon) {
+              @case ('decks') {
+                <rect x="4" y="8" width="12" height="8" rx="1.2" />
+                <path d="M6 8V6.5A1.5 1.5 0 0 1 7.5 5h5A1.5 1.5 0 0 1 14 6.5V8" />
+              }
+              @case ('review') {
+                <path d="M15.5 8.5A5.5 5.5 0 1 0 14 12.8" stroke-linecap="round" />
+                <path d="M15.5 5v3.5H12" stroke-linecap="round" stroke-linejoin="round" />
+              }
+              @case ('backup') {
+                <path d="M10 3v8" stroke-linecap="round" />
+                <path d="M7 8l3 3 3-3" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 13v2a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-2" stroke-linecap="round" />
+              }
+            }
+          </svg>
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
