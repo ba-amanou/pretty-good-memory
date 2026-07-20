@@ -19,12 +19,12 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 
 ## Iteration 3 — App shell & navigation
 
-- [ ] Base routing (`/decks`, `/decks/:id/cards`, default route)
-- [ ] App layout (header + content area)
-- [ ] Navigation menu - top horizontal nav (desktop), bottom nav (mobile)
-- [ ] Global styles: palette variables (ink/paper/gold + rating gradient), base typography setup (Fraunces/Inter/IBM Plex Mono)
-- [ ] Responsive check (mobile + desktop)
-- [ ] Commit + push
+- [x] Base routing (`/decks`, `/decks/:id/cards`, default route)
+- [x] App layout (header + content area)
+- [x] Navigation menu - top horizontal nav (desktop), bottom nav (mobile)
+- [x] Global styles: palette variables (ink/paper/gold + rating gradient), base typography setup (Fraunces/Inter/IBM Plex Mono)
+- [x] Responsive check (mobile + desktop)
+- [x] Commit + push
 
 ## Iteration 4 - Decks CRUD
  
