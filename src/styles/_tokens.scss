@@ -1,0 +1,29 @@
+:root {
+  // --- Palette -----------------------------------------------------------
+  --color-ink: #12141c; // app background
+  --color-ink-raised: #1b1e29; // cards/panels sitting on the ink background
+  --color-paper: #faf6ee; // the "paper" flashcard surface
+  --color-paper-muted: #eee8db; // subtle borders/dividers on paper
+  --color-gold: #c9a45c; // accent, active states
+  --color-gold-dim: #8a7346; // gold at lower emphasis (e.g. resting icon stroke)
+
+  --color-text-on-ink: #f4f1ea;
+  --color-text-on-ink-muted: #9a9cab;
+  --color-text-on-paper: #1f2129;
+
+  // --- Rating gradient (Again -> Hard -> Good -> Easy) --------------------
+  --color-rating-again: #b8492f; // rust
+  --color-rating-hard: #c98a3f; // amber
+  --color-rating-good: #7d7a3f; // olive
+  --color-rating-easy: #8fa888; // sage
+
+  // --- Typography ----------------------------------------------------------
+  --font-display: 'Fraunces', 'Georgia', serif; // card content
+  --font-ui: 'Inter', -apple-system, 'Segoe UI', sans-serif; // chrome, nav, buttons
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace; // numbers, dates
+
+  // --- Layout --------------------------------------------------------------
+  --nav-height-desktop: 4rem;
+  --nav-height-mobile: 4.25rem;
+  --content-max-width: 48rem;
+}
