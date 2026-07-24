@@ -1,0 +1,23 @@
+<dialog #dialogEl class="deck-form" (cancel)="cancel()">
+  <h2 class="deck-form__title">{{ isEditMode() ? 'Edit deck' : 'New deck' }}</h2>
+
+  <form class="deck-form__form" [formGroup]="form" (ngSubmit)="save()">
+    <label class="deck-form__label" for="name">Name</label>
+    <input class="deck-form__input" id="name" type="text" formControlName="name" />
+    @if (form.controls.name.invalid && form.controls.name.touched) {
+      <p class="deck-form__error">Name is required.</p>
+    }
+
+    <label class="deck-form__label" for="description">Description</label>
+    <textarea class="deck-form__input" id="description" formControlName="description"></textarea>
+
+    <div class="deck-form__actions">
+      <button class="deck-form__button deck-form__button--cancel" type="button" (click)="cancel()">
+        Cancel
+      </button>
+      <button class="deck-form__button deck-form__button--submit" type="submit" [disabled]="form.invalid">
+        {{ isEditMode() ? 'Save changes' : 'Create deck' }}
+      </button>
+    </div>
+  </form>
+</dialog>
