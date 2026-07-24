@@ -1,0 +1,11 @@
+<dialog #dialogEl class="confirm-dialog" (cancel)="onCancel()">
+  <p class="confirm-dialog__message">{{ message() }}</p>
+  <div class="confirm-dialog__actions">
+    <button class="confirm-dialog__button confirm-dialog__button--cancel" type="button" (click)="onCancel()">
+      {{ cancelLabel() }}
+    </button>
+    <button class="confirm-dialog__button confirm-dialog__button--confirm" type="button" (click)="onConfirm()">
+      {{ confirmLabel() }}
+    </button>
+  </div>
+</dialog>

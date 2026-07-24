@@ -1,0 +1,42 @@
+.confirm-dialog {
+  background-color: var(--color-ink-raised);
+  color: var(--color-text-on-ink);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  max-width: 360px;
+  font-family: var(--font-ui);
+
+  &::backdrop {
+    background-color: color-mix(in srgb, var(--color-ink) 60%, transparent);
+  }
+
+  &__message {
+    margin: 0 0 1.5rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+
+  &__button {
+    font-family: var(--font-ui);
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+
+    &--cancel {
+      background-color: transparent;
+      color: var(--color-text-on-ink);
+    }
+
+    &--confirm {
+      background-color: var(--color-error);
+      color: var(--color-text-on-ink);
+    }
+  }
+}
