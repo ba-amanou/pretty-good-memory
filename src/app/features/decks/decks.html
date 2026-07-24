@@ -1,2 +1,42 @@
-<h1>Decks</h1>
-<p class="placeholder-note">Deck list and management are coming in the next iteration.</p>
+<section class="decks">
+  <header class="decks__header">
+    <h1 class="decks__title">Decks</h1>
+    <button class="decks__new-button" type="button" (click)="openCreate()">New deck</button>
+  </header>
+
+  @if (decks().length === 0) {
+    <div class="decks__empty">
+      <p class="decks__empty-text">You don't have any deck yet.</p>
+      <button class="decks__empty-cta" type="button" (click)="openCreate()">Create your first deck</button>
+    </div>
+  } @else {
+    <ul class="decks__list">
+      @for (deck of decks(); track deck.id) {
+        <li class="decks__item">
+          <a class="decks__item-link" [routerLink]="['/decks', deck.id]">
+            <h2 class="decks__item-name">{{ deck.name }}</h2>
+            @if (deck.description) {
+              <p class="decks__item-description">{{ deck.description }}</p>
+            }
+          </a>
+          <div class="decks__item-actions">
+            <button class="decks__item-action" type="button" aria-label="Edit deck" (click)="openEdit(deck)">
+              <app-icon name="pencil" />
+            </button>
+            <button class="decks__item-action" type="button" aria-label="Delete deck" (click)="askDelete(deck)">
+              <app-icon name="trash" />
+            </button>           
+          </div>
+        </li>
+      }
+    </ul>
+  }
+
+  <app-deck-form #deckFormDialog />
+  <app-confirm-dialog
+  #deleteDialog
+  message="Delete this deck? This cannot be undone."
+  confirmLabel="Delete"
+  (confirmed)="onDeleteConfirmed()"
+  />
+</section>
