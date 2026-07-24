@@ -1,2 +1,26 @@
-<h1>Decks</h1>
-<p class="placeholder-note">Deck list and management are coming in the next iteration.</p>
+<section class="decks">
+  <header class="decks__header">
+    <h1 class="decks__title">Decks</h1>
+    <a class="decks__new-button" routerLink="/decks/new">New deck</a>
+  </header>
+
+  @if (decks().length === 0) {
+    <div class="decks__empty">
+      <p class="decks__empty-text">You don't have any deck yet.</p>
+      <a class="decks__empty-cta" routerLink="/decks/new">Create your first deck</a>
+    </div>
+  } @else {
+    <ul class="decks__list">
+      @for (deck of decks(); track deck.id) {
+        <li class="decks__item">
+          <a class="decks__item-link" [routerLink]="['/decks', deck.id, 'edit']">
+            <h2 class="decks__item-name">{{ deck.name }}</h2>
+            @if (deck.description) {
+              <p class="decks__item-description">{{ deck.description }}</p>
+            }
+          </a>
+        </li>
+      }
+    </ul>
+  }
+</section>

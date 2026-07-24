@@ -6,6 +6,7 @@
   --color-paper-muted: #eee8db; // subtle borders/dividers on paper
   --color-gold: #c9a45c; // accent, active states
   --color-gold-dim: #8a7346; // gold at lower emphasis (e.g. resting icon stroke)
+  --color-surface: color-mix(in srgb, var(--color-paper) 80%, var(--color-ink) 20%);
 
   --color-text-on-ink: #f4f1ea;
   --color-text-on-ink-muted: #9a9cab;
