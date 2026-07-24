@@ -28,13 +28,15 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 
 ## Iteration 4 - Decks CRUD
  
-- [ ] `Deck` model + Dexie table
-- [ ] `DeckService` (Dexie access, signals-based state)
-- [ ] Deck list screen
-- [ ] Deck form (create/edit)
-- [ ] Delete Deck (with confirmation)
-- [ ] Responsive check (mobile + desktop)
-- [ ] Commit + push
+- [x] `Deck` model + Dexie table
+- [x] `DecksService` (Dexie access via `liveQuery`, signals-based state)
+- [x] Deck list screen
+- [x] Shared `ConfirmDialog` component (native `<dialog>`, reusable across features)
+- [x] Shared `Icon` component (centralized SVG icon set)
+- [x] Deck form (create/edit) implemented as a modal (`<dialog>`) rather than a dedicated route, opened from the list screen
+- [x] Delete Deck (with confirmation, via `ConfirmDialog`)
+- [x] Responsive check (mobile + desktop)
+- [x] Commit + push
 
 ## Iteration 5 - Cards CRUD
  
