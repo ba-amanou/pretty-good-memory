@@ -19,13 +19,24 @@
               <p class="decks__item-description">{{ deck.description }}</p>
             }
           </a>
-          <button class="decks__item-edit" type="button" aria-label="Edit deck" (click)="openEdit(deck)">
-            <app-icon name="pencil" />
-          </button>
+          <div class="decks__item-actions">
+            <button class="decks__item-action" type="button" aria-label="Edit deck" (click)="openEdit(deck)">
+              <app-icon name="pencil" />
+            </button>
+            <button class="decks__item-action" type="button" aria-label="Delete deck" (click)="askDelete(deck)">
+              <app-icon name="trash" />
+            </button>           
+          </div>
         </li>
       }
     </ul>
   }
 
   <app-deck-form #deckFormDialog />
+  <app-confirm-dialog
+  #deleteDialog
+  message="Delete this deck? This cannot be undone."
+  confirmLabel="Delete"
+  (confirmed)="onDeleteConfirmed()"
+  />
 </section>

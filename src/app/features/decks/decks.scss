@@ -79,7 +79,7 @@
     font-family: var(--font-display);
     color: var(--color-text-on-paper);
     margin: 0 0 0.25rem;
-    padding-right: 1.5rem;
+    padding-right: 3.5rem;
     font-size: 1.125rem;
   }
 
@@ -91,10 +91,15 @@
     font-size: 0.875rem;
   }
 
-  &__item-edit {
+  &__item-actions {
     position: absolute;
     top: 1rem;
     right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__item-action {
     display: flex;
     background: none;
     border: none;
