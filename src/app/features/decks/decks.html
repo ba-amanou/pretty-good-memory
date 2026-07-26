@@ -13,7 +13,7 @@
     <ul class="decks__list">
       @for (deck of decks(); track deck.id) {
         <li class="decks__item">
-          <a class="decks__item-link" [routerLink]="['/decks', deck.id]">
+          <a class="decks__item-link" [routerLink]="['/decks', deck.id, 'cards']">
             <h2 class="decks__item-name">{{ deck.name }}</h2>
             @if (deck.description) {
               <p class="decks__item-description">{{ deck.description }}</p>
