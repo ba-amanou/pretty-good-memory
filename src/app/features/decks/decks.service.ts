@@ -29,6 +29,9 @@ export class DecksService {
     }
 
     delete(id: number): Promise<void> {
-        return db.decks.delete(id);
+        return db.transaction('rw', db.decks, db.cards, async () => {
+          await db.cards.where('deckId').equals(id).delete();
+          await db.decks.delete(id);
+        });
     }
 }
