@@ -1,2 +1,38 @@
-<h1>Deck cards</h1>
-<p class="placeholder-note">Cards for deck #{{ id() }} will show up here in a future iteration.</p>
+@let state = deckState();
+
+@if (state.status === 'missing') {
+  <section class="cards">
+    <p class="cards__missing">This deck doesn't exist anymore.</p>
+    <a class="cards__back-link" routerLink="/decks">Back to decks</a>
+  </section>
+} @else if (state.status === 'found') {
+  <section class="cards">
+    <header class="cards__header">
+      <a class="cards__back" routerLink="/decks" aria-label="Back to decks">
+        <app-icon name="arrow-left" />
+      </a>
+      <div class="cards__heading">
+        <h1 class="cards__title">{{ state.deck.name }}</h1>
+        <p class="cards__count">{{ cards().length }} {{ cards().length === 1 ? 'card' : 'cards' }}</p>
+      </div>
+    </header>
+
+
+
+  @if (cards().length === 0) {
+    <div class="cards__empty">
+      <p class="cards__empty-text">This deck is empty.</p>
+    </div>
+  } @else {
+    <ul class="cards__list">
+    @for (card of cards(); track card.id) {
+      <li class="cards__item">
+        <p class="cards__question">{{ card.question }}</p>
+        <p class="cards__answer">{{ card.answer }}</p>
+        <span class="cards__badge cards__badge--{{ card.difficulty }}">{{ card.difficulty }}</span>
+      </li>      
+    }
+    </ul>
+  }
+  </section>
+}

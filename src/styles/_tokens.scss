@@ -28,4 +28,9 @@
   --nav-height-desktop: 4rem;
   --nav-height-mobile: 4.25rem;
   --content-max-width: 48rem;
+
+  // --- Difficulty badges (seeds the starting ease, distinct from review ratings) ---
+  --color-difficulty-easy: var(--color-rating-easy);
+  --color-difficulty-medium: var(--color-rating-hard);
+  --color-difficulty-hard: var(--color-rating-again);
 }
