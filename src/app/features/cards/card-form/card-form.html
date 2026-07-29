@@ -1,0 +1,39 @@
+<dialog #dialogEl class="card-form" (cancel)="cancel()">
+  <h2 class="card-form__title">{{ isEditMode() ? 'Edit card' : 'New card' }}</h2>
+
+  <form class="card-form__form" [formGroup]="form" (ngSubmit)="save()">
+    <label class="card-form__label" for="question">Question</label>
+    <textarea #questionEl class="card-form__input" id="question" rows="3" formControlName="question"></textarea>
+    @if (form.controls.question.invalid && form.controls.question.touched) {
+      <p class="card-form__error">Question is required.</p>
+    }
+
+    <label class="card-form__label" for="answer">Answer</label>
+    <textarea class="card-form__input" id="answer" rows="4" formControlName="answer"></textarea>
+    @if (form.controls.answer.invalid && form.controls.answer.touched) {
+      <p class="card-form__error">Answer is required.</p>
+    }
+
+    <label class="card-form__label" for="difficulty">Difficulty</label>
+    <select class="card-form__input" id="difficulty" formControlName="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <p class="card-form__hint">Only sets the starting ease. Reviews take over from there.</p>
+
+    <div class="card-form__actions">
+      <button class="card-form__button card-form__button--cancel" type="button" (click)="cancel()">
+        Cancel
+      </button>
+      @if (!isEditMode()) {
+        <button class="card-form__button card-form__button--secondary" type="button" [disabled]="form.invalid" (click)="saveAndAddAnother()">
+          Save and add another
+        </button>
+      }
+      <button class="card-form__button card-form__button--submit" type="submit" [disabled]="form.invalid">
+        {{ isEditMode() ? 'Save changes' : 'Create card' }}
+      </button>
+    </div>
+  </form>
+</dialog>

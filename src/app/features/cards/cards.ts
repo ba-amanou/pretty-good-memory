@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, inject, input, viewChild } from '@angular/core';
 import { CardsService } from './cards.service';
 import { DecksService } from '../decks/decks.service';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
@@ -7,6 +7,7 @@ import { Card } from '../../core/database/card.model';
 import { Icon } from '../../shared/icon/icon';
 import { RouterLink } from '@angular/router';
 import { Deck } from '../../core/database/deck.model';
+import { CardForm } from './card-form/card-form';
 
 type DeckState = 
   | { status:'loading' } 
@@ -15,7 +16,7 @@ type DeckState =
 
 @Component({
   selector: 'app-cards',
-  imports: [RouterLink, Icon],
+  imports: [RouterLink, CardForm, Icon],
   templateUrl: './cards.html',
   styleUrl: './cards.scss',
 })
@@ -27,6 +28,8 @@ export class Cards {
 
   private deckId = computed(() => Number(this.id()));
   private deckId$ = toObservable(this.deckId);
+
+  private cardForm = viewChild.required<CardForm>('cardFormDialog');
   
   protected deckState = toSignal(
     this.deckId$.pipe(
@@ -40,4 +43,12 @@ export class Cards {
     this.deckId$.pipe(switchMap((deckId) => this.cardsService.observeByDeck(deckId))),
     { initialValue: [] as Card[] }
   )
+
+  protected openCreate(): void {
+    this.cardForm().open();
+  }
+
+  protected openEdit(card: Card): void {
+    this.cardForm().open(card);
+  }
 }
