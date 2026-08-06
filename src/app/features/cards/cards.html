@@ -22,7 +22,8 @@
 
   @if (cards().length === 0) {
     <div class="cards__empty">
-      <p class="cards__empty-text">This deck is empty.</p>
+      <p class="cards__empty-text">This deck has no card yet.</p>
+      <button class="cards__empty-cta" type="button" (click)="openCreate()">Add your first card</button>
     </div>
   } @else {
     <ul class="cards__list">
@@ -34,6 +35,9 @@
           <button class="cards__item-action" type="button" aria-label="Edit card" (click)="openEdit(card)">
             <app-icon name="pencil" />
           </button>
+          <button class="cards__item-action" type="button" aria-label="Delete card" (click)="askDelete(card)">
+            <app-icon name="trash" />
+          </button>          
       </div>
         <span class="cards__badge cards__badge--{{ card.difficulty }}">{{ card.difficulty }}</span>
       </li>      
@@ -42,4 +46,10 @@
   }
   </section>
   <app-card-form #cardFormDialog [deckId]="state.deck.id" />
+  <app-confirm-dialog
+    #deleteDialog
+    message="Delete this card? This cannot be undone."
+    confirmLabel="Delete"
+    (confirmed)="onDeleteConfirmed()"
+  />  
 }
