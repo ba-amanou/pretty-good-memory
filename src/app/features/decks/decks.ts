@@ -5,10 +5,11 @@ import { DeckForm } from './deck-form/deck-form';
 import { Deck } from '../../core/database/deck.model';
 import { Icon } from '../../shared/icon/icon';
 import { ConfirmDialog } from '../../shared/confirm-dialog/confirm-dialog';
+import { CardCount } from "../cards/card-count/card-count";
 
 @Component({
   selector: 'app-decks',
-  imports: [RouterLink, DeckForm, ConfirmDialog, Icon],
+  imports: [RouterLink, DeckForm, ConfirmDialog, CardCount, Icon],
   templateUrl: './decks.html',
   styleUrl: './decks.scss',
 })

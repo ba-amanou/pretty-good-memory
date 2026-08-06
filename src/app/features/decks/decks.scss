@@ -67,12 +67,15 @@
     background-color: var(--color-surface);
     border-radius: 0.5rem;
     padding: 1rem;
+    display: flex;
   }
 
   &__item-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   &__item-name {
@@ -111,5 +114,11 @@
     &:hover {
       opacity: 1;
     }
+  }
+
+  &__item-count {
+  display: block;
+  margin-top: auto;
+  padding-top: 0.5rem;
   }
 }

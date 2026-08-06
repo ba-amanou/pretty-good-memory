@@ -18,6 +18,7 @@
             @if (deck.description) {
               <p class="decks__item-description">{{ deck.description }}</p>
             }
+            <app-card-count class="decks__item-count" [deckId]="deck.id"/>
           </a>
           <div class="decks__item-actions">
             <button class="decks__item-action" type="button" aria-label="Edit deck" (click)="openEdit(deck)">
