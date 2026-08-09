@@ -40,13 +40,15 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 
 ## Iteration 5 - Cards CRUD
  
-- [ ] `Card` model + Dexie table (with `difficulty`)
-- [ ] `CardService`
-- [ ] Card list screen (filtered by Deck, difficulty badge)
-- [ ] Card form (create/edit)
-- [ ] Delete card
-- [ ] Responsive check (mobile + desktop)
-- [ ] Commit + push
+- [x] `Card` model + Dexie table (with `difficulty`)
+- [x] `CardService`
+- [x] Card list screen for a Deck, with difficulty badge
+- [x] Card form (create/edit) as modal
+- [x] Delete card
+- [x] Deleting a deck cascades to its cards
+- [x] Card count on deck tiles
+- [x] Responsive check (mobile + desktop)
+- [x] Commit + push
 
 ## Iteration 6 - SM-2 algorithm
  
@@ -79,3 +81,10 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 - [ ] Security layer before any public (non-local) hosting
 - [ ] Remote hosting (Vercel / Netlify / Cloudflare Pages)
 - [ ] ESLint/Prettier config
+- [ ] Run Prettier across the whole repo
+- [ ] Migrate hardcoded SVGs in `AppNav` to the shared `Icon` component
+- [ ] Extract the hardcoded border color in `app-nav.scss` into a token
+- [ ] Pin exact dependency versions (currently using `^`)
+- [ ] Consider `rxResource` to replace the manual `toObservable`/`switchMap`/`toSignal` pipeline
+- [ ] Search/filter within a deck (useful past ~50 cards)
+- [ ] Move a card to another deck
