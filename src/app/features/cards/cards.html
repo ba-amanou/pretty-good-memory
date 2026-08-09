@@ -1,2 +1,55 @@
-<h1>Deck cards</h1>
-<p class="placeholder-note">Cards for deck #{{ id() }} will show up here in a future iteration.</p>
+@let state = deckState();
+
+@if (state.status === 'missing') {
+  <section class="cards">
+    <p class="cards__missing">This deck doesn't exist anymore.</p>
+    <a class="cards__back-link" routerLink="/decks">Back to decks</a>
+  </section>
+} @else if (state.status === 'found') {
+  <section class="cards">
+    <header class="cards__header">
+      <a class="cards__back" routerLink="/decks" aria-label="Back to decks">
+        <app-icon name="arrow-left" />
+      </a>
+      <div class="cards__heading">
+        <h1 class="cards__title">{{ state.deck.name }}</h1>
+        <p class="cards__count">{{ cards().length }} {{ cards().length === 1 ? 'card' : 'cards' }}</p>
+      </div>
+      <button class="cards__new-button" type="button" (click)="openCreate()">New card</button>
+    </header>
+
+
+
+  @if (cards().length === 0) {
+    <div class="cards__empty">
+      <p class="cards__empty-text">This deck has no card yet.</p>
+      <button class="cards__empty-cta" type="button" (click)="openCreate()">Add your first card</button>
+    </div>
+  } @else {
+    <ul class="cards__list">
+    @for (card of cards(); track card.id) {
+      <li class="cards__item">
+        <p class="cards__question">{{ card.question }}</p>
+        <p class="cards__answer">{{ card.answer }}</p>
+        <div class="cards__item-actions">
+          <button class="cards__item-action" type="button" aria-label="Edit card" (click)="openEdit(card)">
+            <app-icon name="pencil" />
+          </button>
+          <button class="cards__item-action" type="button" aria-label="Delete card" (click)="askDelete(card)">
+            <app-icon name="trash" />
+          </button>          
+      </div>
+        <span class="cards__badge cards__badge--{{ card.difficulty }}">{{ card.difficulty }}</span>
+      </li>      
+    }
+    </ul>
+  }
+  </section>
+  <app-card-form #cardFormDialog [deckId]="state.deck.id" />
+  <app-confirm-dialog
+    #deleteDialog
+    message="Delete this card? This cannot be undone."
+    confirmLabel="Delete"
+    (confirmed)="onDeleteConfirmed()"
+  />  
+}
