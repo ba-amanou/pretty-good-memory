@@ -4,7 +4,13 @@
     @for (item of navItems; track item.path) {
       <li>
         <a [routerLink]="item.path" routerLinkActive="is-active" class="app-nav__link">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            aria-hidden="true"
+          >
             @switch (item.icon) {
               @case ('decks') {
                 <rect x="4" y="8" width="12" height="8" rx="1.2" />

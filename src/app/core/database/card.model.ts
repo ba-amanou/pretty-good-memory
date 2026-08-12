@@ -19,4 +19,4 @@ export const INITIAL_EASE_FACTOR: Record<Difficulty, number> = {
   easy: 2.6,
   medium: 2.5,
   hard: 2.3,
-}
+};

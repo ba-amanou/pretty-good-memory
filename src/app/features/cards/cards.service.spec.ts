@@ -10,7 +10,7 @@ describe('CardsService', () => {
   const newCard = (deckId: number, question: string): NewCard => ({
     deckId,
     question,
-    answer:'An answer',
+    answer: 'An answer',
     difficulty: 'medium',
     easeFactor: 2.5,
     interval: 0,
@@ -27,12 +27,12 @@ describe('CardsService', () => {
   it('should be support the full card lifecycle', async () => {
     const id = await service.create(newCard(1, 'What is a signal?'));
     expect(await service.getById(id)).toEqual(
-      expect.objectContaining({deckId: 1, question:'What is a signal?'})
+      expect.objectContaining({ deckId: 1, question: 'What is a signal?' }),
     );
 
-    await service.update(id, {difficulty: 'hard'});
+    await service.update(id, { difficulty: 'hard' });
     expect((await service.getById(id))?.difficulty).toBe('hard');
-  
+
     await service.delete(id);
     expect(await service.getById(id)).toBeUndefined();
   });
@@ -44,6 +44,5 @@ describe('CardsService', () => {
 
     expect(await db.cards.where('deckId').equals(1).count()).toBe(2);
     expect(await db.cards.where('deckId').equals(2).count()).toBe(1);
-  })
-
+  });
 });

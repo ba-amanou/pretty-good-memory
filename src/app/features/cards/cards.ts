@@ -10,10 +10,7 @@ import { Deck } from '../../core/database/deck.model';
 import { CardForm } from './card-form/card-form';
 import { ConfirmDialog } from '../../shared/confirm-dialog/confirm-dialog';
 
-type DeckState = 
-  | { status:'loading' } 
-  | { status:'missing' } 
-  | { status:'found'; deck: Deck };
+type DeckState = { status: 'loading' } | { status: 'missing' } | { status: 'found'; deck: Deck };
 
 @Component({
   selector: 'app-cards',
@@ -34,19 +31,19 @@ export class Cards {
   private confirmDialog = viewChild.required<ConfirmDialog>('deleteDialog');
 
   private cardToDelete = signal<Card | null>(null);
-  
+
   protected deckState = toSignal(
     this.deckId$.pipe(
       switchMap((deckId) => this.decksService.observeById(deckId)),
-      map((deck) : DeckState => ( deck ? { status: 'found', deck } : { status: 'missing'})),
+      map((deck): DeckState => (deck ? { status: 'found', deck } : { status: 'missing' })),
     ),
-    { initialValue: { status : 'loading'} },
-  )
+    { initialValue: { status: 'loading' } },
+  );
 
   protected cards = toSignal(
     this.deckId$.pipe(switchMap((deckId) => this.cardsService.observeByDeck(deckId))),
-    { initialValue: [] as Card[] }
-  )
+    { initialValue: [] as Card[] },
+  );
 
   protected openCreate(): void {
     this.cardForm().open();

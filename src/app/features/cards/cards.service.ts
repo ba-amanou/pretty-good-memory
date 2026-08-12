@@ -26,7 +26,7 @@ export class CardsService {
     return db.cards.update(id, changes);
   }
 
-  delete(id:number): Promise<void> {
+  delete(id: number): Promise<void> {
     return db.cards.delete(id);
   }
 }

@@ -1,9 +1,9 @@
- TODO
- 
+TODO
+
 Tracked by iteration. One goal per iteration, app stays functional at the end of each one.
- 
-## Iteration 1 - Project setup + Git 
- 
+
+## Iteration 1 - Project setup + Git
+
 - [x] Init Git repository
 - [x] Angular project (standalone, routing, strict mode)
 - [x] `.gitattributes` for consistent line endings
@@ -12,7 +12,7 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 - [x] Public GitHub repo created and pushed
 
 ## Iteration 2 - Documentation
- 
+
 - [x] `README.md` (context, stack, getting started)
 - [x] `TODO.md`
 - [x] Commit + push
@@ -27,7 +27,7 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 - [x] Commit + push
 
 ## Iteration 4 - Decks CRUD
- 
+
 - [x] `Deck` model + Dexie table
 - [x] `DecksService` (Dexie access via `liveQuery`, signals-based state)
 - [x] Deck list screen
@@ -39,7 +39,7 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 - [x] Commit + push
 
 ## Iteration 5 - Cards CRUD
- 
+
 - [x] `Card` model + Dexie table (with `difficulty`)
 - [x] `CardService`
 - [x] Card list screen for a Deck, with difficulty badge
@@ -51,13 +51,13 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 - [x] Commit + push
 
 ## Iteration 6 - SM-2 algorithm
- 
+
 - [ ] `ReviewAlgoService` (isolated, no UI dependency)
 - [ ] Unit tests (`ng test`) covering Again / Hard / Good / Easy transitions
 - [ ] Commit + push
 
 ## Iteration 7 - Review screen
- 
+
 - [ ] Query cards due for review (`nextReviewDate <= today`)
 - [ ] Flip question/answer interaction
 - [ ] Rating buttons (Again / Hard / Good / Easy)
@@ -67,7 +67,7 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 - [ ] Commit + push
 
 ## Iteration 8 - Export / Import
- 
+
 - [ ] Manual JSON export
 - [ ] Manual JSON import (restore)
 - [ ] AI-generated card import: define JSON schema
@@ -75,13 +75,12 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 - [ ] `navigator.storage.persist()` request
 - [ ] Commit + push
 
- 
 ## Backlog / not scheduled
- 
+
 - [ ] Security layer before any public (non-local) hosting
 - [ ] Remote hosting (Vercel / Netlify / Cloudflare Pages)
-- [ ] ESLint/Prettier config
-- [ ] Run Prettier across the whole repo
+- [x] ESLint/Prettier config
+- [x] Run Prettier across the whole repo
 - [ ] Migrate hardcoded SVGs in `AppNav` to the shared `Icon` component
 - [ ] Extract the hardcoded border color in `app-nav.scss` into a token
 - [ ] Pin exact dependency versions (currently using `^`)

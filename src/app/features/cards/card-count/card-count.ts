@@ -1,7 +1,7 @@
-import { Component, inject, input } from "@angular/core";
-import { CardsService } from "../cards.service";
-import { toObservable, toSignal } from "@angular/core/rxjs-interop";
-import { switchMap } from "rxjs";
+import { Component, inject, input } from '@angular/core';
+import { CardsService } from '../cards.service';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-card-count',
@@ -22,7 +22,9 @@ export class CardCount {
   private cardsService = inject(CardsService);
 
   protected count = toSignal(
-    toObservable(this.deckId).pipe(switchMap((deckId) => this.cardsService.observeCountByDeck(deckId))),
-    {initialValue : 0},
+    toObservable(this.deckId).pipe(
+      switchMap((deckId) => this.cardsService.observeCountByDeck(deckId)),
+    ),
+    { initialValue: 0 },
   );
 }
