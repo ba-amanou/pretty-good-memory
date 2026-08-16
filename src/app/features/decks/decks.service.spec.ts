@@ -36,8 +36,8 @@ describe('DecksService', () => {
   });
 
   it('should delete the cards of a deck along with it', async () => {
-    const deckId = await service.create({name: 'Angular'});
-    const otherDeckId = await service.create({name :'RxJs'});
+    const deckId = await service.create({ name: 'Angular' });
+    const otherDeckId = await service.create({ name: 'RxJs' });
 
     await db.cards.bulkAdd([
       newCard(deckId, 'First'),

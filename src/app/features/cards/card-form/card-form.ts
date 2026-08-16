@@ -25,9 +25,9 @@ export class CardForm {
     question: ['', Validators.required],
     answer: ['', Validators.required],
     difficulty: ['medium' as Difficulty, Validators.required],
-  })
+  });
 
-  open(card: Card | null = null) : void {
+  open(card: Card | null = null): void {
     this.editing.set(card);
     this.isEditMode.set(card != null);
     this.form.reset(
@@ -36,7 +36,7 @@ export class CardForm {
         : { question: '', answer: '', difficulty: 'medium' },
     );
     this.dialog().nativeElement.showModal();
-  };
+  }
 
   async save(): Promise<void> {
     if (this.form.invalid) return;
@@ -82,5 +82,4 @@ export class CardForm {
   private close(): void {
     this.dialog().nativeElement.close();
   }
- 
 }

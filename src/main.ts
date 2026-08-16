@@ -4,8 +4,7 @@ import { App } from './app/app';
 import { isDevMode } from '@angular/core';
 import { db, PrettyGoodMemoryDatabase } from './app/core/database/db';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(App, appConfig).catch((err) => console.error(err));
 
 declare global {
   interface Window {

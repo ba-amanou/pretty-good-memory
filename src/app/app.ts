@@ -6,7 +6,7 @@ import { AppNav } from './core/layout/app-nav/app-nav';
   selector: 'app-root',
   imports: [RouterOutlet, AppNav],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('pretty-good-memory');

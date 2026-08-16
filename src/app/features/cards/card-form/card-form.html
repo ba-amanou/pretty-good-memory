@@ -3,7 +3,13 @@
 
   <form class="card-form__form" [formGroup]="form" (ngSubmit)="save()">
     <label class="card-form__label" for="question">Question</label>
-    <textarea #questionEl class="card-form__input" id="question" rows="3" formControlName="question"></textarea>
+    <textarea
+      #questionEl
+      class="card-form__input"
+      id="question"
+      rows="3"
+      formControlName="question"
+    ></textarea>
     @if (form.controls.question.invalid && form.controls.question.touched) {
       <p class="card-form__error">Question is required.</p>
     }
@@ -27,11 +33,20 @@
         Cancel
       </button>
       @if (!isEditMode()) {
-        <button class="card-form__button card-form__button--secondary" type="button" [disabled]="form.invalid" (click)="saveAndAddAnother()">
+        <button
+          class="card-form__button card-form__button--secondary"
+          type="button"
+          [disabled]="form.invalid"
+          (click)="saveAndAddAnother()"
+        >
           Save and add another
         </button>
       }
-      <button class="card-form__button card-form__button--submit" type="submit" [disabled]="form.invalid">
+      <button
+        class="card-form__button card-form__button--submit"
+        type="submit"
+        [disabled]="form.invalid"
+      >
         {{ isEditMode() ? 'Save changes' : 'Create card' }}
       </button>
     </div>

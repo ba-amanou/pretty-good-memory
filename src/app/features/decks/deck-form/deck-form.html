@@ -15,7 +15,11 @@
       <button class="deck-form__button deck-form__button--cancel" type="button" (click)="cancel()">
         Cancel
       </button>
-      <button class="deck-form__button deck-form__button--submit" type="submit" [disabled]="form.invalid">
+      <button
+        class="deck-form__button deck-form__button--submit"
+        type="submit"
+        [disabled]="form.invalid"
+      >
         {{ isEditMode() ? 'Save changes' : 'Create deck' }}
       </button>
     </div>

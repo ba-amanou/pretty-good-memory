@@ -3,37 +3,39 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    background: var(--color-ink);
-    color: var(--color-text-on-ink);
-    font-family: var(--font-ui);
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-text-on-ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    margin: 0;
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
 }
 
 button {
-    font-family: inherit;
+  font-family: inherit;
 }
 
 :focus-visible {
-    outline: 2px solid var(--color-gold);
-    outline-offset: 2px;
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
 
 .placeholder-note {
-    color: var(--color-text-on-ink-muted);
+  color: var(--color-text-on-ink-muted);
 }
