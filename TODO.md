@@ -83,7 +83,7 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 - [x] Run Prettier across the whole repo
 - [ ] Migrate hardcoded SVGs in `AppNav` to the shared `Icon` component
 - [ ] Extract the hardcoded border color in `app-nav.scss` into a token
-- [ ] Pin exact dependency versions (currently using `^`)
+- [x] Pin exact dependency versions (currently using `^`)
 - [ ] Consider `rxResource` to replace the manual `toObservable`/`switchMap`/`toSignal` pipeline
 - [ ] Search/filter within a deck (useful past ~50 cards)
 - [ ] Move a card to another deck
