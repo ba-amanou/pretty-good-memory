@@ -79,10 +79,11 @@ Tracked by iteration. One goal per iteration, app stays functional at the end of
 
 - [ ] Security layer before any public (non-local) hosting
 - [ ] Remote hosting (Vercel / Netlify / Cloudflare Pages)
-- [x] ESLint/Prettier config
+- [x] Prettier config
 - [x] Run Prettier across the whole repo
-- [ ] Migrate hardcoded SVGs in `AppNav` to the shared `Icon` component
-- [ ] Extract the hardcoded border color in `app-nav.scss` into a token
+- [ ] ESLint config
+- [x] Migrate hardcoded SVGs in `AppNav` to the shared `Icon` component
+- [x] Extract the hardcoded border color in `app-nav.scss` into a token
 - [x] Pin exact dependency versions (currently using `^`)
 - [ ] Consider `rxResource` to replace the manual `toObservable`/`switchMap`/`toSignal` pipeline
 - [ ] Search/filter within a deck (useful past ~50 cards)
