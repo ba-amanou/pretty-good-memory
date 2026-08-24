@@ -12,7 +12,7 @@
   height: var(--nav-height-desktop);
   padding: 0 1.5rem;
   background: var(--color-ink-raised);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border-on-ink);
 }
 
 .app-nav__brand {
@@ -31,6 +31,8 @@
 }
 
 .app-nav__link {
+  --icon-size: 1.25rem;
+
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -66,7 +68,7 @@
     padding: 0;
     padding-bottom: env(safe-area-inset-bottom, 0);
     border-bottom: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid var(--color-border-on-ink);
   }
 
   .app-nav__brand {
